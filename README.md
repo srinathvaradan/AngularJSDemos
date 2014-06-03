@@ -237,7 +237,115 @@ Name:<input type="text" ng-model="inputName"/> {{inputName}}
 
 
 class
+<html ng-app>
+<head>
+    <title>Data-Binding Basics</title>
+</head>
+<body>
+<style>
+.strike {
+  text-decoration: line-through;
+}
+.bold {
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+</style>
+<div>
+<p ng-class="{strike: deleted, bold: important, red: error}">Map Syntax Example</p>
+<input type="checkbox" ng-model="deleted"> deleted (apply "strike" class)<br>
+<input type="checkbox" ng-model="important"> important (apply "bold" class)<br>
+<input type="checkbox" ng-model="error"> error (apply "red" class)
+<hr>
+</div>
+<script src="angular.min.js"></script>
 
+</body>
+</html>
+
+
+hide show
+
+
+<html ng-app>
+<head>
+    <title>Data-Binding Basics</title>
+</head>
+<body>
+
+Click me: <input type="checkbox" ng-model="checked"><br/>
+<div>
+ <div ng-show="checked">
+  I show up when your checkbox is checked.
+  </div>
+</div>
+<div>
+<div ng-hide="checked">
+    I hide when your checkbox is checked.
+  </div>
+</div>
+<script src="angular.min.js"></script>
+
+</body>
+</html>
+
+
+
+if
+
+
+<html ng-app>
+<head>
+    <title>Data-Binding Basics</title>
+</head>
+<body>
+
+Click me: <input type="checkbox" ng-model="checked"><br/>
+<div>
+ <div ng-if="checked">
+  I show up when your checkbox is checked.
+  </div>
+</div>
+<div>
+
+<script src="angular.min.js"></script>
+
+</body>
+</html>
+
+
+
+switch
+
+
+<html ng-app>
+<head>
+    <title>Using Simple Controller</title>
+</head>
+<body ng-controller="SimpleController">
+<div>
+ <select ng-model="selection" ng-options="item for item in items">
+  </select>
+ <br/>
+</div>
+ <br/>
+<div ng-switch on="selection">
+      <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
+
+      <div class="animate-switch" ng-switch-when="home">Home Span</div>
+      <div class="animate-switch" ng-switch-default>default</div>
+  </div>
+<script src="angular.min.js"></script>
+<script type="text/javascript">
+    function SimpleController($scope){
+       $scope.items = ['settings', 'home', 'other'];
+  $scope.selection = $scope.items[0];
+    }
+</script>
+</body>
+</html>
 
 
 

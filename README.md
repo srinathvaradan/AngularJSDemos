@@ -232,3 +232,13 @@ Name:<input type="text" ng-model="inputName"/> {{inputName}}
 <ul>
 <li ng-repeat="personNames in names | filter:inputName |orderBy:'city'">{{personNames.name}} - {{personNames.city | uppercase}}</li>
 </ul></div>
+
+
+
+
+class
+
+
+
+
+
